@@ -1,0 +1,219 @@
+# Community Mental Wellness Platform - Deployment Configuration
+# This configuration file manages deployment settings for different networks
+
+[common]
+# Core platform settings
+platform_name = "Community Mental Wellness Platform"
+version = "1.0.0"
+chain = "stacks"
+
+# Contract deployment order (dependencies managed)
+contract_deploy_order = [
+  "wellness-registry",
+  "support-networks", 
+  "mindful-resources"
+]
+
+# Platform constants
+max_practitioners = 1000
+max_support_groups = 500
+max_wellness_resources = 2000
+max_meditation_sessions = 1000
+max_wellness_journeys = 5000
+
+[devnet]
+# Local development network settings
+network = "devnet"
+mnemonic = "twice kind fence tip hidden tilt action fragile skin nothing glory cousin green tomorrow spring wrist shed math olympic multiply hip blue scout claw"
+deployer_address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+fee_estimate = 1000
+
+# Devnet-specific configurations
+auto_mine_blocks = true
+block_time = "2s"
+initial_balances = [
+  { address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM", amount = 1000000000000 },
+  { address = "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5", amount = 1000000000000 },
+  { address = "ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG", amount = 1000000000000 }
+]
+
+[testnet]
+# Stacks testnet settings
+network = "testnet"
+node_url = "https://stacks-node-api.testnet.stacks.co"
+deployment_fee = 50000
+
+# Testnet contract addresses (populated after deployment)
+wellness_registry_address = ""
+support_networks_address = ""
+mindful_resources_address = ""
+
+# Testing parameters
+test_accounts = [
+  "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+  "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5",
+  "ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG"
+]
+
+[mainnet]
+# Stacks mainnet settings (production)
+network = "mainnet"
+node_url = "https://stacks-node-api.mainnet.stacks.co"
+deployment_fee = 100000
+
+# Production safety settings
+require_multisig = true
+deployment_confirmation_required = true
+audit_required = true
+
+# Mainnet contract addresses (populated after deployment)
+wellness_registry_address = ""
+support_networks_address = ""
+mindful_resources_address = ""
+
+[monitoring]
+# Platform monitoring and analytics
+enable_analytics = true
+track_user_engagement = true
+monitor_crisis_requests = true
+wellness_metrics_enabled = true
+
+# Alert thresholds
+max_crisis_requests_per_hour = 50
+min_practitioner_response_time = 300 # seconds
+max_failed_transactions_per_hour = 100
+
+# Data retention policies
+activity_logs_retention_days = 365
+wellness_data_retention_days = 1095 # 3 years
+crisis_logs_retention_days = 2555 # 7 years (regulatory requirement)
+
+[security]
+# Security configuration
+enable_rate_limiting = true
+max_requests_per_minute = 100
+enable_ddos_protection = true
+
+# Privacy settings
+anonymize_wellness_data = true
+encrypt_crisis_communications = true
+gdpr_compliance_enabled = true
+
+# Access control
+require_practitioner_verification = true
+enable_community_moderation = true
+crisis_escalation_enabled = true
+
+[integrations]
+# External service integrations
+enable_telehealth_integration = false
+crisis_hotline_integration = true
+insurance_billing_integration = false
+
+# Crisis support contacts
+national_suicide_prevention_lifeline = "988"
+crisis_text_line = "741741"
+local_emergency_services = "911"
+
+# API integrations
+mental_health_apis = []
+meditation_content_apis = []
+research_data_apis = []
+
+[content]
+# Content management settings
+default_language = "en"
+supported_languages = ["en", "es", "fr", "de"]
+content_moderation_enabled = true
+
+# Resource categories
+wellness_categories = [
+  "meditation",
+  "therapy",
+  "support-groups", 
+  "crisis-support",
+  "education",
+  "self-care",
+  "mindfulness",
+  "stress-management"
+]
+
+# Quality assurance
+require_content_review = true
+community_rating_enabled = true
+professional_endorsement_required = false
+
+[compliance]
+# Regulatory compliance
+hipaa_compliance = true
+gdpr_compliance = true
+accessibility_standards = "WCAG-2.1-AA"
+
+# Data handling
+personal_data_encryption = true
+medical_data_encryption = true
+audit_logging = true
+
+# Professional standards
+verify_practitioner_licenses = true
+require_continuing_education = true
+malpractice_insurance_verification = false
+
+[performance]
+# Performance optimization
+cache_frequently_accessed_data = true
+optimize_database_queries = true
+enable_cdn = false
+
+# Scaling parameters
+auto_scaling_enabled = false
+max_concurrent_users = 10000
+database_connection_pool_size = 100
+
+# Resource limits
+max_file_upload_size = "10MB"
+max_session_duration = 3600 # seconds
+max_meditation_session_duration = 7200 # 2 hours
+
+[notifications]
+# Notification system
+enable_email_notifications = true
+enable_sms_notifications = false
+enable_push_notifications = true
+
+# Crisis notifications
+immediate_crisis_alerts = true
+practitioner_crisis_notifications = true
+escalation_notifications = true
+
+# Wellness notifications
+daily_wellness_reminders = true
+journey_progress_updates = true
+community_activity_updates = false
+
+[backup]
+# Data backup and recovery
+automated_backups = true
+backup_frequency = "daily"
+backup_retention_days = 90
+
+# Recovery settings
+point_in_time_recovery = true
+cross_region_backup = false
+disaster_recovery_enabled = true
+
+[analytics]
+# Platform analytics
+user_journey_tracking = true
+wellness_outcome_metrics = true
+community_engagement_metrics = true
+
+# Privacy-preserving analytics
+differential_privacy = true
+anonymize_analytics_data = true
+aggregate_data_only = true
+
+# Research metrics
+track_intervention_effectiveness = true
+measure_community_wellness_score = true
+longitudinal_outcome_studies = true
