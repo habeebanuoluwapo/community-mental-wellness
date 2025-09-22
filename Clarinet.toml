@@ -19,6 +19,22 @@ epoch = 2.5
 path = 'contracts/wellness-registry.clar'
 clarity_version = 2
 epoch = 2.5
+
+[contracts.enterprise-wellness]
+path = 'contracts/enterprise-wellness.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.telehealth-integration]
+path = 'contracts/telehealth-integration.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.mobile-integration]
+path = 'contracts/mobile-integration.clar'
+clarity_version = 2
+epoch = 2.5
+
 [repl.analysis]
 passes = ['check_checker']
 
